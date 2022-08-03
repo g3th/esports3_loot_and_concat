@@ -8,7 +8,7 @@ file_list = []
 ts_file_list = []
 os.makedirs('downloads', exist_ok = True)
 
-'''def threaded_downloads(page, index):
+def threaded_downloads(page, index):
 	request = requests.get(page + str(index) + '.ts', stream=True).content
 	with open('downloads/'+str(index)+'.ts','wb') as ts:
 		ts.write(request)
@@ -16,7 +16,7 @@ os.makedirs('downloads', exist_ok = True)
 with concurrent.futures.ThreadPoolExecutor(80) as executor:
 	for i in range(1400,2000):
 		executor.submit(threaded_downloads, page, i)
-'''
+
 for file_ in os.listdir('downloads'):
 	file_list.append(file_)
 
